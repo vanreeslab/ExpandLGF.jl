@@ -1,0 +1,6 @@
+docs/build/
+Manifest.toml
+demos/Manifest.toml
+docs/Manifest.toml
+test/Manifest.toml
+.vscode

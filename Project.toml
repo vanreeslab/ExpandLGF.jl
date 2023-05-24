@@ -1,0 +1,19 @@
+name = "ExpandLGF"
+uuid = "6903404a-33db-474d-97e9-b7e0dcc9144b"
+authors = ["jgabbard <jgabbard@mit.edu>"]
+version = "0.1.0"
+
+[deps]
+AbstractAlgebra = "c3fe647b-3220-5bb0-a1ea-a7954cac585d"
+HCubature = "19dc6840-f33b-545b-b366-655c7e3ffd49"
+OffsetArrays = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
+QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
+Symbolics = "0c5d862f-8b57-4792-8d23-62f2024744c7"
+
+[compat]
+julia = "1"
+AbstractAlgebra = "0.29"
+HCubature = "1.5"
+OffsetArrays = "1.12"
+QuadGK = "2.8"
+Symbolics = "5.3"
