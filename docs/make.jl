@@ -9,6 +9,7 @@ makedocs(
              "Examples" => "examples.md",
              "Docstrings" => "docstrings.md"]
     )
-# deploydocs(
-#     repo = "github.mit.edu/vanreeslab/ExpandLGF.jl"
-# )
+
+deploydocs(
+    repo = "github.com/vanreeslab/ExpandLGF.jl"
+)
