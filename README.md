@@ -1,5 +1,7 @@
 # ExpandLGF.jl
 
+[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://vanreeslab.github.io/ExpandLGF.jl)
+
 ExpandLGF.jl provides fast and accurate evaluations of the Lattice Green's Functions (LGFs) for high-order finite difference discretizations of Poisson's equation. 
 
 ## Background
