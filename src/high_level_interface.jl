@@ -210,10 +210,13 @@ near_cutoff(ELGF::EvaluateLGF) = ELGF.rad_
 
 function (ELGF::EvaluateLGF)(n)
     @assert length(n) == ELGF.dimension
+    # Note: we offset the near field value for 2D problems
+    # With this choice G(0, 0) != 0.0, as defined in the paper, but any data generated 
+    # with this function will be consistent with the C code generated for 2D far-field expansions
     if sum(n.^2) >= ELGF.rad_^2
-        return ELGF.ff_(n) + ELGF.offset_
+        return ELGF.ff_(n) 
     else
-        return ELGF.nf_(n)
+        return ELGF.nf_(n) - ELGF.offset_ 
     end
 end
 
