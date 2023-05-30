@@ -70,7 +70,7 @@ end
 
 Return the polynomials $a_{2q}(\bm{k})$ with `q <= q_max` for a given stencil.
 
-See Martinnson, Rodin. "Asymptotic Expansions of Lattice Green's Functions". JCP 2022
+See Martinsson, Rodin. "Asymptotic Expansions of Lattice Green's Functions". JCP 2022
 
 # Arguments
  - `cffs` : the finite difference coefficients
@@ -82,7 +82,7 @@ function martinsson_rodin_a2q(stencil::Stencil{N, T}, q_max::Int, PR::MPolyRing)
     # Power series expansion of the symbol
     b = graded_series_expansion(stencil, q_max + 1, PR)
 
-    # Martinnson and Rodin's recursion for 1/σ = 1/|x|^2 + sum_q=1^inf a2q / x^(2q+2) 
+    # Martinsson and Rodin's recursion for 1/σ = 1/|x|^2 + sum_q=1^inf a2q / x^(2q+2) 
     PolyType = elem_type(PR)
     c = Dict{Tuple{Int64, Int64}, PolyType}()
 
@@ -108,7 +108,7 @@ end
 @doc raw"""
     far_field_expansion_coeffs(stencil::Stencil{3, T}, m, PR::MPolyRing{T}) where T
 
-Calculates an ``m``-term far-field expansion of the LGF using an algorithm from Martinnson and Rodin.
+Calculates an ``m``-term far-field expansion of the LGF using an algorithm from Martinsson and Rodin.
 The result is an array `g` of multivariate polynomials in ``n`` so that
 ```math
 G(n) = \frac{1}{4\pi |\bm{n}|} + \frac{1}{\pi}\sum_{k=1}^m \frac{g_k(\bm{n})}{|\bm{n}|^{6k+1}} + \mathcal{O}\left( |\bm{n}|^{-(2m + 3)} \right)
@@ -154,7 +154,7 @@ end
 @doc raw"""
     far_field_expansion_coeffs(stencil::Stencil{2, T}, m, PR::MPolyRing{T}) where T
 
-Calculates an ``m``-term far-field expansion of the 2D LGF using an algorithm from Martinnson and Rodin.
+Calculates an ``m``-term far-field expansion of the 2D LGF using an algorithm from Martinsson and Rodin.
 The result is an array `g` of multivariate polynomials in ``n`` so that
 ```math
 G(\bm{n}) = -\frac{1}{2\pi}\left(\log |\bm{n}| + \gamma + \frac{\log 8}{2}\right) + \frac{1}{\pi}\sum_{k=1}^m \frac{g_k(\bm{n})}{|\bm{n}|^{6j}} + \mathcal{O}\left( |\bm{n}|^{-(m+1)} \right),
